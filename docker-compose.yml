@@ -1,0 +1,27 @@
+version: '2'
+
+networks:
+  bow:
+    driver: bridge
+
+services:
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+    expose:
+      - 9090
+    links:
+      - prom-remoteserver
+    networks:
+      - bow
+
+  prom-remoteserver:
+    image: jecnua/prom-remoteserver
+    expose:
+      - 1234
+    ports:
+      - 9090:9090
+    networks:
+      - bow
