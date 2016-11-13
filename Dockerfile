@@ -10,6 +10,8 @@ ARG VERSION
 ARG VCS_URL
 ARG VCS_REF
 
+EXPOSE 1234
+
 RUN go get github.com/golang/snappy && \
   go get github.com/golang/protobuf/proto && \
   go get github.com/prometheus/common/model && \
@@ -27,4 +29,4 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
   com.jecnua.docker.dockerfile="/Dockerfile" \
   com.jecnua.license="MIT"
 
-ENTRYPOINT [ "/go/server" ]
+CMD [ "/go/server" ]
