@@ -1,5 +1,7 @@
 # Fake remote storage receiver server for Prometheus on docker
 
+NOTE: This repo is part of my analysis of the weave cloud product ([notes](https://go-talks.appspot.com/github.com/jecnua/notes-presentations/projects/weave/weave_cloud.article)).
+
 While testing the new online service [cloud.weave.works](https://cloud.weave.works) (to forward prometheus data), I found this new configuration that we needed to add to the _prometheus.yml_:
 
     remote_write:
