@@ -1,4 +1,4 @@
-default: test
+default: build
 
 # Build Docker image
 build: docker_build output
@@ -49,16 +49,6 @@ DOCKER_TAG = $(CODE_VERSION)-$(GIT_COMMIT)$(DOCKER_TAG_SUFFIX)
 endif
 
 SOURCES := $(shell find . -name '*.go')
-
-test:
-	go test -v ./...
-
-get-deps:
-	go get -t -v ./...
-
-# $(BINARY): $(SOURCES)
-# 	Compile for Linux
-# 	GOOS=linux go build -o $(BINARY)
 
 docker_build:
 	# Build Docker image
