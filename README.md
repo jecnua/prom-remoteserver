@@ -1,4 +1,4 @@
-# Fake remote storage server for Prometheus
+# Fake remote storage receiver server for Prometheus on docker
 
 While testing the new online service [cloud.weave.works](https://cloud.weave.works) (to forward prometheus data), I found this new configuration that we needed to add to the _prometheus.yml_:
 
